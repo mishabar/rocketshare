@@ -8,11 +8,11 @@
     <file path="/Dummy.txt" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377274215693" ignored="false" />
     <file path="/20130823142148_create_shared_links.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377358253323" ignored="false" />
     <file path="/20130823143656_create_users.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377269130840" ignored="false" />
-    <file path="/share_controller.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377360413558" ignored="false" />
+    <file path="/share_controller.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377380046212" ignored="false" />
     <file path="/Gemfile" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377270117356" ignored="false" />
     <file path="/routes.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377272349764" ignored="false" />
-    <file path="/fragment.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377357815904" ignored="false" />
-    <file path="/application.html.erb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377361682291" ignored="false" />
+    <file path="/fragment.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377379205619" ignored="false" />
+    <file path="/application.html.erb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377361683389" ignored="false" />
     <file path="/20130823161022_add_open_graph_fields_to_shared_links.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377274487515" ignored="false" />
     <file path="/shared_link.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377357948636" ignored="false" />
     <file path="/user.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377274567186" ignored="false" />
@@ -39,7 +39,7 @@
       <file leaf-file-name="share_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/share_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="7" selection-start="2682" selection-end="2682" vertical-scroll-proportion="0.0">
+            <state line="86" column="61" selection-start="2916" selection-end="2916" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -63,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generate.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="generate.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/share/generate.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="34" selection-start="127" selection-end="127" vertical-scroll-proportion="-1.9615384">
+            <state line="4" column="34" selection-start="137" selection-end="137" vertical-scroll-proportion="0.17258883">
               <folding />
             </state>
           </provider>
@@ -81,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="58" selection-start="304" selection-end="304" vertical-scroll-proportion="0.17787743">
+            <state line="7" column="58" selection-start="304" selection-end="304" vertical-scroll-proportion="-4.576923">
               <folding />
             </state>
           </provider>
@@ -113,8 +113,8 @@
         <option value="$PROJECT_DIR$/db/migrate/20130823161022_add_open_graph_fields_to_shared_links.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20130823142148_create_shared_links.rb" />
         <option value="$PROJECT_DIR$/app/views/share/generate.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/share_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/share_controller.rb" />
       </list>
     </option>
   </component>
@@ -583,8 +583,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25289574" sideWeight="0.60107815" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39892185" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25289574" sideWeight="0.60107815" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39892185" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33013436" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -657,7 +657,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="14" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -683,13 +683,6 @@
     <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-3.2.11/lib/action_controller/metal/rescue.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="41" selection-start="1013" selection-end="1022" vertical-scroll-proportion="0.83">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-3.2.11/lib/active_record/dynamic_matchers.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
@@ -750,23 +743,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/share/generate.html.erb">
+    <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-3.2.11/lib/active_record/dynamic_matchers.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="34" selection-start="127" selection-end="127" vertical-scroll-proportion="-1.9615384">
+        <state line="27" column="0" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/share_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="7" selection-start="2682" selection-end="2682" vertical-scroll-proportion="0.0">
+        <state line="86" column="61" selection-start="2916" selection-end="2916" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="58" selection-start="304" selection-end="304" vertical-scroll-proportion="0.17787743">
+        <state line="7" column="58" selection-start="304" selection-end="304" vertical-scroll-proportion="-4.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/share/generate.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="34" selection-start="137" selection-end="137" vertical-scroll-proportion="0.17258883">
           <folding />
         </state>
       </provider>

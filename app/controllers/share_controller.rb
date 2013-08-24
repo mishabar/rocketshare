@@ -1,5 +1,6 @@
 require 'uri'
 require 'mechanize'
+require 'digest/md5'
 
 class ShareController < ApplicationController
 
@@ -31,7 +32,7 @@ class ShareController < ApplicationController
           user.save
         end
 
-        short_link = "#{user.fb_id}:#{params[:url]}".to_i(32)
+        short_link = Digest::MD5.hexdigest("#{user.fb_id}:#{params[:url]}")
         unless SharedLink.exists?({:short_link => short_link.to_s})
           #  Get page details
           mechanize = Mechanize.new { |agent|
@@ -64,9 +65,10 @@ class ShareController < ApplicationController
 
             @link.save
           end
-
-          data[:link] = @link
+        else
+          @link = SharedLink.find_by_short_link(short_link.to_s)
         end
+        data[:link] = { :url => @link.short_link }
       end
     rescue Exception => ex
       data[:error] = 'Unexpected error'
@@ -77,7 +79,7 @@ class ShareController < ApplicationController
   end
 
   def generate
-    @web_flow = true
+    @web_flow = params[:debug].nil?
     if request.env['HTTP_USER_AGENT'].include?('(+https://www.facebook.com/externalhit_uatext.php)') || # Facebook External Crawler
         request.env['HTTP_USER_AGENT'].include?('Google (+https://developers.google.com/+/web/snippet/)') # Google+ snippet
       @web_flow = false

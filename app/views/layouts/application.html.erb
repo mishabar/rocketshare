@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+  <title><%= @link.title %></title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="<%= @link.description %>">
+  <!-- Facebook -->
+  <% unless @link.og_title.nil? %>
+      <meta property="og:title" content="<%= @link.og_title %>">
+  <% end %>
+  <% unless @link.og_description.nil? %>
+      <meta property="og:description" content="<%= @link.og_description %>">
+  <% end %>
+  <% unless @link.og_images.length == 0 %>
+      <% @link.og_images.each do |og_image| %>
+          <meta property="og:image" content="<%= og_image %>">
+      <% end %>
+  <% end %>
+</head>
+<body>
+<%= yield %>
+</body>
+</html>

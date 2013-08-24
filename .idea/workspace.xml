@@ -12,7 +12,7 @@
     <file path="/Gemfile" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377270117356" ignored="false" />
     <file path="/routes.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377272349764" ignored="false" />
     <file path="/fragment.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377357815904" ignored="false" />
-    <file path="/application.html.erb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377357071106" ignored="false" />
+    <file path="/application.html.erb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377361682291" ignored="false" />
     <file path="/20130823161022_add_open_graph_fields_to_shared_links.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377274487515" ignored="false" />
     <file path="/shared_link.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377357948636" ignored="false" />
     <file path="/user.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377274567186" ignored="false" />
@@ -36,10 +36,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="share_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="share_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/share_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="7" selection-start="2682" selection-end="2682" vertical-scroll-proportion="0.12230216">
+            <state line="82" column="7" selection-start="2682" selection-end="2682" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -81,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="8" selection-start="539" selection-end="539" vertical-scroll-proportion="-7.9615383">
+            <state line="7" column="58" selection-start="304" selection-end="304" vertical-scroll-proportion="0.17787743">
               <folding />
             </state>
           </provider>
@@ -110,11 +110,11 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/models/shared_link.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20130823161022_add_open_graph_fields_to_shared_links.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20130823142148_create_shared_links.rb" />
         <option value="$PROJECT_DIR$/app/views/share/generate.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/share_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -736,13 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="8" selection-start="539" selection-end="539" vertical-scroll-proportion="-7.9615383">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20130823161022_add_open_graph_fields_to_shared_links.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="70" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
@@ -766,7 +759,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/share_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="7" selection-start="2682" selection-end="2682" vertical-scroll-proportion="0.12230216">
+        <state line="82" column="7" selection-start="2682" selection-end="2682" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="58" selection-start="304" selection-end="304" vertical-scroll-proportion="0.17787743">
           <folding />
         </state>
       </provider>

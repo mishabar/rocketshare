@@ -5,6 +5,7 @@
   <meta name="robots" content="noindex">
   <meta name="description" content="<%= @link.description %>">
   <!-- Facebook -->
+  <meta property="og:url" content="<%= @link.original_link %>">
   <% unless @link.og_title.nil? %>
       <meta property="og:title" content="<%= @link.og_title %>">
   <% end %>

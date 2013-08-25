@@ -91,28 +91,33 @@ class ShareController < ApplicationController
       @web_flow = false
     end
     @link = SharedLink.find_by_short_link(params[:short_url])
-
-    #if web_flow
-    #  request.env['HTTP_REFERER'] = 'http://www.rockt.com'
-    #  redirect_to @link.original_link
-    #end
   end
 
   private
 
   def try_find_images(page)
     images = []
-    doc = Hpricot(page.content)
-    doc.search('//img').each do |img|
-      if !img[:alt].blank? &&
-        (!img[:width].nil? && img[:width].to_i > 100) &&
-        (!img[:height].nil? && img[:height].to_i > 100)
-        images.push(img[:src])
+    page.images.each do |img|
+      if !img.alt.blank? &&
+        (!img.width.nil? && img.width.to_i > 100) &&
+        (!img.height.nil? && img.height.to_i > 100)
+        images.push(URI.join(page.uri, img.src).to_s)
       end
-      if images.length == 3
-        break
-      end
+        if images.length == 3
+          break
+        end
     end
+    #doc = Hpricot(page.content)
+    #doc.search('//img').each do |img|
+    #  if !img[:alt].blank? &&
+    #    (!img[:width].nil? && img[:width].to_i > 100) &&
+    #    (!img[:height].nil? && img[:height].to_i > 100)
+    #    images.push(img[:src])
+    #  end
+    #  if images.length == 3
+    #    break
+    #  end
+    #end
     return images
   end
 

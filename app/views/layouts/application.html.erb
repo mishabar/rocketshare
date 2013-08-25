@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html itemscope itemtype="http://schema.org/WebPage">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
   <title><%= @link.title %></title>
   <meta name="robots" content="noindex">
@@ -16,6 +16,13 @@
       <% @link.og_images.each do |og_image| %>
           <meta property="og:image" content="<%= og_image %>">
       <% end %>
+  <% end %>
+  <!-- Google + -->
+  <meta itemprop="url" content="<%= @link.original_link %>">
+  <meta itemprop="name" content="<%= @link.og_title %>">
+  <meta itemprop="description" content="<%= @link.og_description %>">
+  <% unless @link.og_images.length == 0 %>
+      <meta itemprop="image" content="@link.og_images[0]">
   <% end %>
 </head>
 <body>

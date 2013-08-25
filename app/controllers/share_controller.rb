@@ -1,6 +1,8 @@
 require 'uri'
 require 'mechanize'
+require 'nokogiri'
 require 'digest/md5'
+require 'hpricot'
 
 class ShareController < ApplicationController
 
@@ -62,13 +64,17 @@ class ShareController < ApplicationController
             # Images
             @link.images = []
             @link.og_images = get_open_graph_property_values(page, OG_IMAGE, @link.images)
+            if @link.og_images.length == 0
+              @link.images = try_find_images(page)
+              @link.og_images = @link.images
+            end
 
             @link.save
           end
         else
           @link = SharedLink.find_by_short_link(short_link.to_s)
         end
-        data[:link] = { :url => @link.short_link }
+        data[:link] = {:url => @link.short_link}
       end
     rescue Exception => ex
       data[:error] = 'Unexpected error'
@@ -93,6 +99,22 @@ class ShareController < ApplicationController
   end
 
   private
+
+  def try_find_images(page)
+    images = []
+    doc = Hpricot(page.content)
+    doc.search('//img').each do |img|
+      if !img[:alt].blank? &&
+        (!img[:width].nil? && img[:width].to_i > 100) &&
+        (!img[:height].nil? && img[:height].to_i > 100)
+        images.push(img[:src])
+      end
+      if images.length == 3
+        break
+      end
+    end
+    return images
+  end
 
   def get_open_graph_property_value(page, name, default)
     tag = page.at("meta[@property='#{name}']")

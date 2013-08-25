@@ -22,7 +22,7 @@
   <meta itemprop="name" content="<%= @link.og_title %>">
   <meta itemprop="description" content="<%= @link.og_description %>">
   <% unless @link.og_images.length == 0 %>
-      <meta itemprop="image" content="@link.og_images[0]">
+      <meta itemprop="image" content="<%= @link.og_images[0] %>">
   <% end %>
 </head>
 <body>

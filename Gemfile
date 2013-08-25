@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
@@ -7,6 +9,8 @@ gem 'rails', '3.2.11'
 
 gem 'pg'
 gem 'mechanize'
+gem 'nokogiri'
+gem 'hpricot'
 
 
 # Gems used only for assets and not required

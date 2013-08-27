@@ -107,17 +107,7 @@ class ShareController < ApplicationController
           break
         end
     end
-    #doc = Hpricot(page.content)
-    #doc.search('//img').each do |img|
-    #  if !img[:alt].blank? &&
-    #    (!img[:width].nil? && img[:width].to_i > 100) &&
-    #    (!img[:height].nil? && img[:height].to_i > 100)
-    #    images.push(img[:src])
-    #  end
-    #  if images.length == 3
-    #    break
-    #  end
-    #end
+
     return images
   end
 

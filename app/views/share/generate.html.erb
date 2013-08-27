@@ -1,9 +1,20 @@
 <% if @web_flow %>
     <script type="text/javascript">
-      window.location.href = '<%= @link.original_link %>';
+        (function () {
+            setTimeout(function(){
+                if (window.history.state == null || !window.history.state.rockt) {
+                    window.history.replaceState({rockt: true}, 'rocket');
+                    window.location.href = '<%= @link.original_link %>';
+                } else {
+                    window.history.replaceState({rockt: false}, 'rocket');
+                    document.title = 'Rockt.li';
+                    document.write('<h1>Banner</h1>');
+                }
+            }, 200);
+        })();
     </script>
 <% else %>
     <% @link.images.each do |img| %>
-        <img src="<%= img %>" />
+        <img src="<%= img %>"/>
     <% end %>
 <% end %>

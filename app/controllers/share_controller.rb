@@ -107,6 +107,7 @@ class ShareController < ApplicationController
         stat.save
       end
       referrer = @_request.env['HTTP_REFERER']
+      puts referrer
       unless referrer.blank?
         if referrer.downcase.include? 'facebook'
           stat.increment!(:facebook)

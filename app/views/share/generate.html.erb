@@ -1,16 +1,20 @@
 <% if @web_flow %>
     <script type="text/javascript">
         (function () {
-            setTimeout(function(){
-                if (window.history.state == null || !window.history.state.rockt) {
-                    window.history.replaceState({rockt: true}, 'rocket');
-                    window.location.href = '<%= @link.original_link %>';
-                } else {
-                    window.history.replaceState({rockt: false}, 'rocket');
-                    document.title = 'Rockt.li';
-                    document.write('<h1>Banner</h1>');
-                }
-            }, 200);
+            if (null != navigator.userAgent.toLowerCase().match(/(android|iphone|ipad|ipod)/)) {
+                setTimeout(function () {
+                    if (window.history.state == null || !window.history.state.rockt) {
+                        window.history.replaceState({rockt: true}, 'rocket');
+                        window.location.href = '<%= @link.original_link %>';
+                    } else {
+                        window.history.replaceState({rockt: false}, 'rocket');
+                        document.title = 'Rockt.li';
+                        document.write('<h1>Banner</h1>');
+                    }
+                }, 200);
+            } else {
+                window.location.href = '<%= @link.original_link %>';
+            }
         })();
     </script>
 <% else %>

@@ -101,9 +101,9 @@ class ShareController < ApplicationController
   def add_view(link)
     begin
       utc_now = Time.now.utc
-      stat = Stat.where({:link_id => link.id, :user_id => link.user_id, :date => Date.parse(utc_now), :hour => utc_now.hour}).limit(1)
+      stat = Stat.where({:link_id => link.id, :user_id => link.user_id, :date => Date.parse(utc_now.to_s), :hour => utc_now.hour}).limit(1)
       if stat.nil?
-        stat = Stat.new({:link_id => link.id, :user_id => link.user_id, :date => Date.parse(utc_now), :hour => utc_now.hour})
+        stat = Stat.new({:link_id => link.id, :user_id => link.user_id, :date => Date.parse(utc_now.to_s), :hour => utc_now.hour})
         stat.save
       end
       referrer = @_request.env['HTTP_REFERER']

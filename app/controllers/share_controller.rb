@@ -127,6 +127,8 @@ class ShareController < ApplicationController
         else
           stat.increment!(:other_os)
         end
+
+        stat.increment!(:views)
       end
     rescue Exception => ex
       puts ex.message

@@ -8,7 +8,7 @@
     <file path="/Dummy.txt" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377809262473" ignored="false" />
     <file path="/20130823142148_create_shared_links.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377358253323" ignored="false" />
     <file path="/20130823143656_create_users.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377269130840" ignored="false" />
-    <file path="/share_controller.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377817026077" ignored="false" />
+    <file path="/share_controller.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377817485643" ignored="false" />
     <file path="/Gemfile" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377394562668" ignored="false" />
     <file path="/routes.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377272349764" ignored="false" />
     <file path="/fragment.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377816135372" ignored="false" />
@@ -43,7 +43,7 @@
       <file leaf-file-name="share_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/share_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="22" selection-start="3592" selection-end="3592" vertical-scroll-proportion="0.37209302">
+            <state line="130" column="31" selection-start="4234" selection-end="4234" vertical-scroll-proportion="0.9209302">
               <folding />
             </state>
           </provider>
@@ -766,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20130829204748_create_stats.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="35" selection-start="614" selection-end="624" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/stat.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="2" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
@@ -780,9 +773,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130829204748_create_stats.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="35" selection-start="614" selection-end="624" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/share_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="22" selection-start="3592" selection-end="3592" vertical-scroll-proportion="0.37209302">
+        <state line="130" column="31" selection-start="4234" selection-end="4234" vertical-scroll-proportion="0.9209302">
           <folding />
         </state>
       </provider>

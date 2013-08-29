@@ -91,21 +91,56 @@ class ShareController < ApplicationController
       @web_flow = false
     end
     @link = SharedLink.find_by_short_link(params[:short_url])
+    if @web_flow
+      add_view(@link)
+    end
   end
 
   private
+
+  def add_view(link)
+    begin
+      utc_now = Time.now.utc
+      stat = Stat.where({:link_id => link.id, :user_id => link.user_id, :date => Date.parse(utc.now), :hour => utc_now.hour}).limit(1)
+      if stat.nil?
+        stat = Stat.new({:link_id => link.id, :user_id => link.user_id, :date => Date.parse(utc.now), :hour => utc_now.hour})
+        stat.save
+      end
+      referrer = @_request.env['HTTP_REFERER']
+      unless referrer.blank?
+        if referrer.downcase.include? 'facebook'
+          stat.increment!(:facebook)
+        elsif referrer.downcase.include? 'google'
+          stat.increment!(:googleplus)
+        else
+          stat.increment!(:other_sn)
+        end
+
+        os = @_request.env['HTTP_USER_AGENT'].downcase
+        if !/(ipod|ipad|iphone)/.match(os).nil?
+          stat.increment!(:ios)
+        elsif !/(android)/.match(os).nil?
+          stat.increment!(:android)
+        else
+          stat.increment!(:other_os)
+        end
+      end
+    rescue Exception => ex
+      puts ex.message
+    end
+  end
 
   def try_find_images(page)
     images = []
     page.images.each do |img|
       if !img.alt.blank? &&
-        (!img.width.nil? && img.width.to_i > 100) &&
-        (!img.height.nil? && img.height.to_i > 100)
+          (!img.width.nil? && img.width.to_i > 100) &&
+          (!img.height.nil? && img.height.to_i > 100)
         images.push(URI.join(page.uri, img.src).to_s)
       end
-        if images.length == 3
-          break
-        end
+      if images.length == 3
+        break
+      end
     end
 
     return images

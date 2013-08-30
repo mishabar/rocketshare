@@ -100,35 +100,41 @@ class ShareController < ApplicationController
 
   def add_view(link)
     begin
-      utc_now = Time.now.utc
-      stats = Stat.where({:link_id => link.id, :user_id => link.user_id, :date => Date.parse(utc_now.to_s), :hour => utc_now.hour}).limit(1)
-      if stats.count == 0
-        stat = Stat.new({:link_id => link.id, :user_id => link.user_id, :date => Date.parse(utc_now.to_s), :hour => utc_now.hour})
-        stat.save
-      else
-        stat = stats[0]
-      end
-      referrer = @_request.env['HTTP_REFERER']
-      puts referrer
-      unless referrer.blank?
-        if referrer.downcase.include? 'facebook'
-          stat.increment!(:facebook)
-        elsif referrer.downcase.include? 'google'
-          stat.increment!(:googleplus)
-        else
-          stat.increment!(:other_sn)
-        end
+      # Add cookie
+      if cookies[link.short_link].nil?
+        cookies[link.short_link] = { value: true, expires: 1.day.from_now }
 
-        os = @_request.env['HTTP_USER_AGENT'].downcase
-        if !/(ipod|ipad|iphone)/.match(os).nil?
-          stat.increment!(:ios)
-        elsif !/(android)/.match(os).nil?
-          stat.increment!(:android)
+        utc_now = Time.now.utc
+        stats = Stat.where({:link_id => link.id, :user_id => link.user_id, :date => Date.parse(utc_now.to_s), :hour => utc_now.hour}).limit(1)
+        if stats.count == 0
+          stat = Stat.new({:link_id => link.id, :user_id => link.user_id, :date => Date.parse(utc_now.to_s), :hour => utc_now.hour})
+          stat.save
         else
-          stat.increment!(:other_os)
+          stat = stats[0]
         end
+        referrer = @_request.env['HTTP_REFERER']
+        puts referrer
+        unless referrer.blank?
+          # Save stat
+          if referrer.downcase.include? 'facebook'
+            stat.increment!(:facebook)
+          elsif referrer.downcase.include? 'google'
+            stat.increment!(:googleplus)
+          else
+            stat.increment!(:other_sn)
+          end
 
-        stat.increment!(:views)
+          os = @_request.env['HTTP_USER_AGENT'].downcase
+          if !/(ipod|ipad|iphone)/.match(os).nil?
+            stat.increment!(:ios)
+          elsif !/(android)/.match(os).nil?
+            stat.increment!(:android)
+          else
+            stat.increment!(:other_os)
+          end
+
+          stat.increment!(:views)
+        end
       end
     rescue Exception => ex
       puts ex.message

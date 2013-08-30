@@ -34,8 +34,14 @@ class ShareController < ApplicationController
           user.save
         end
 
-        short_link = Digest::MD5.hexdigest("#{user.fb_id}:#{params[:url]}")
-        unless SharedLink.exists?({:short_link => short_link.to_s})
+        links = SharedLink.where({:fb_id => params[:fb_id], :original_link => params[:url]})
+
+        if links.count == 0
+          short_link = SecureRandom.urlsafe_base64(6)
+          while SharedLink.exists?({:short_link => short_link})
+            short_link = SecureRandom.urlsafe_base64(6)
+          end
+
           #  Get page details
           mechanize = Mechanize.new { |agent|
             agent.user_agent = request.env['HTTP_USER_AGENT']
@@ -72,7 +78,7 @@ class ShareController < ApplicationController
             @link.save
           end
         else
-          @link = SharedLink.find_by_short_link(short_link.to_s)
+          @link = links[0]
         end
         data[:link] = {:url => @link.short_link}
       end

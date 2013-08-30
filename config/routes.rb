@@ -1,5 +1,6 @@
 Rocketshare::Application.routes.draw do
   match 'share' => 'share#share'
+  match 'leaderboard' => 'share#leaderboard'
   match ':short_url' => 'share#generate'
 
   # The priority is based upon order of creation:

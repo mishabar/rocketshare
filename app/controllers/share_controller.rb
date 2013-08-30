@@ -21,7 +21,7 @@ class ShareController < ApplicationController
       #  Check required parameters
       if params[:fb_id].blank?
         data[:error] = 'Invalid or missing fb_id'
-      elsif params[:name].blank?
+      elsif params[:name].blank? && User.find_by_fb_id(params[:fb_id]).nil?
         data[:error] = 'Invalid or missing name'
       elsif params[:url].blank? || !valid?(params[:url])
         data[:error] = 'Invalid or missing url'
@@ -100,6 +100,12 @@ class ShareController < ApplicationController
     if @web_flow
       add_view(@link)
     end
+  end
+
+  def leaderboard
+    @views_leaderboard = Stat.joins(:user).group('stats.user_id, users.name').select('stats.user_id, users.name, SUM(stats.views) as total_views').order('total_views desc').limit(100)
+    @shares_leaderboard = SharedLink.joins(:user).group('shared_links.user_id, users.name').select('shared_links.user_id, users.name, COUNT(shared_links.user_id) as total_shares').order('total_shares desc').limit(100)
+    render :json => { :leaderboard => { :views => @views_leaderboard, :shares => @shares_leaderboard }}
   end
 
   private

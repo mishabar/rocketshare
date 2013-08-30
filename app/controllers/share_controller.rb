@@ -108,6 +108,13 @@ class ShareController < ApplicationController
     render :json => { :leaderboard => { :views => @views_leaderboard, :shares => @shares_leaderboard }}
   end
 
+  def stats
+    @user = User.find_by_fb_id(params[:fb_id])
+    @views = Stat.select('SUM(stats.views) as views').where({:user_id => @user.id})
+    @shares = SharedLink.select('count(shared_links.user_id) as shares').where({:user_id => @user.id})
+    render :json => {:stats => { :fb_id => @user.fb_id, :name => @user.name, :views => @views[0]['views'], :shares => @shares[0]['shares'] }}
+  end
+
   private
 
   def add_view(link)

@@ -2,6 +2,7 @@ Rocketshare::Application.routes.draw do
   match 'share' => 'share#share'
   match 'leaderboard' => 'share#leaderboard'
   match 'stats/:fb_id' => 'share#stats'
+  match 'reports' => 'reports#default'
   match ':short_url' => 'share#generate'
 
   # The priority is based upon order of creation:

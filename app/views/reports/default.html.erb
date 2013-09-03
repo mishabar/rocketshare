@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>RocketShare Reports</h1>
+</div>
+
+<div class="row">
+  <table class="table table-condensed">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Shares</th>
+      <th>Views</th>
+      <th>iOS</th>
+      <th>Android</th>
+      <th>Other OS</th>
+      <th>Facebook</th>
+      <th>Google+</th>
+      <th>Other Network</th>
+    </tr>
+    </thead>
+    <tbody>
+        <% @data.each do |row| %>
+            <tr>
+              <td><%= row[0] %></td>
+              <td><%= row[1][:shares]%></td>
+              <td><%= row[1][:views]%></td>
+              <td><%= row[1][:ios]%></td>
+              <td><%= row[1][:android]%></td>
+              <td><%= row[1][:other_os]%></td>
+              <td><%= row[1][:facebook]%></td>
+              <td><%= row[1][:googleplus]%></td>
+              <td><%= row[1][:other_sn]%></td>
+            </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>

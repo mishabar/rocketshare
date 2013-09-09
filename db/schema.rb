@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130829204748) do
+ActiveRecord::Schema.define(:version => 20130909121502) do
 
   create_table "shared_links", :force => true do |t|
     t.string   "fb_id",                          :null => false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130829204748) do
     t.integer  "other_sn",   :default => 0, :null => false
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+    t.integer  "twitter",    :default => 0, :null => false
   end
 
   add_index "stats", ["link_id", "user_id", "date", "hour"], :name => "index_stats_on_link_id_and_user_id_and_date_and_hour"

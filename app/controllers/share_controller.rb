@@ -135,10 +135,12 @@ class ShareController < ApplicationController
         puts referrer
         unless referrer.blank?
           # Save stat
-          if referrer.downcase.include? 'facebook'
+          if referrer.downcase.include? 'facebook.com'
             stat.increment!(:facebook)
-          elsif referrer.downcase.include? 'google'
+          elsif referrer.downcase.include? 'google.com/'
             stat.increment!(:googleplus)
+          elsif referrer.downcase.include? '/t.co/'
+            stat.increment!(:twitter)
           else
             stat.increment!(:other_sn)
           end

@@ -97,7 +97,7 @@ class ShareController < ApplicationController
       @web_flow = false
     end
     @link = SharedLink.find_by_short_link(params[:short_url])
-    if @web_flow
+    if @web_flow == true
       add_view(@link)
     end
   end

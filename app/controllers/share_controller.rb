@@ -100,6 +100,10 @@ class ShareController < ApplicationController
     if @web_flow == true
       add_view(@link)
     end
+    if request.env['HTTP_USER_AGENT'].include?('Mac OS X')
+      redirect_to @link.original_link
+      return
+    end
   end
 
   def leaderboard

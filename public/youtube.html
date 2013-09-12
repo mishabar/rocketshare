@@ -4,6 +4,19 @@
     <title>Testing</title>
 </head>
 <body>
-<iframe src="http://www.youtube.com/watch?v=cZ2aXfijdJg"></iframe>
+<button onclick="getData()">Get Data</button>
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+    function getData(){
+        $.ajax({
+            url: "/stats/12345678",
+            method: "POST",
+            //data: {friends: ["01","87654321", "23456789"]},
+            success: function(data){
+                alert(1);
+            }
+        });
+    }
+</script>
 </body>
 </html>

@@ -109,14 +109,41 @@ class ShareController < ApplicationController
   def leaderboard
     @views_leaderboard = Stat.joins(:user).group('users.fb_id, users.name').select('users.fb_id, users.name, SUM(stats.views) as total_views').order('total_views desc').limit(100)
     @shares_leaderboard = SharedLink.joins(:user).group('users.fb_id, users.name').select('users.fb_id, users.name, COUNT(users.fb_id) as total_shares').order('total_shares desc').limit(100)
-    render :json => { :leaderboard => { :views => @views_leaderboard, :shares => @shares_leaderboard }}
+    render :json => {:leaderboard => {:views => @views_leaderboard, :shares => @shares_leaderboard}}
   end
 
   def stats
     @user = User.find_by_fb_id(params[:fb_id])
+    friends = []
+
+    unless params[:friends].nil?
+      in_values = (params[:friends].map! { |v| "'#{v}'" }).join(',')
+      sql = " SELECT v.fb_id, v.name, v.views, s.shares
+              FROM
+              (
+              SELECT fb_id, COUNT(*) as shares
+              FROM   shared_links
+              WHERE fb_id IN (#{in_values})
+              GROUP BY fb_id
+              ) s
+              LEFT JOIN
+              (
+              SELECT fb_id, name, SUM(stats.views) as views
+              FROM   users INNER JOIN stats ON users.id = stats.user_id
+              WHERE fb_id IN (#{in_values})
+              GROUP BY users.fb_id, users.name
+              ) v ON s.fb_id = v.fb_id"
+
+      ActiveRecord::Base.establish_connection()
+      results = ActiveRecord::Base.connection().execute(sql)
+      results.each do |row|
+        friends.push({:fb_id => row['fb_id'], :name => row['name'], :views => row['views'], :shares => row['shares']})
+      end
+    end
     @views = Stat.select('SUM(stats.views) as views').where({:user_id => @user.id})
-    @shares = SharedLink.select('count(shared_links.user_id) as shares').where({:user_id => @user.id})
-    render :json => {:stats => { :fb_id => @user.fb_id, :name => @user.name, :views => @views[0]['views'], :shares => @shares[0]['shares'] }}
+    @shares = SharedLink.select('COUNT(shared_links.user_id) as shares').where({:user_id => @user.id})
+    render :json => {:me => {:fb_id => @user.fb_id, :name => @user.name, :views => @views[0]['views'], :shares => @shares[0]['shares']},
+                     :friends => friends}
   end
 
   private
@@ -125,7 +152,7 @@ class ShareController < ApplicationController
     begin
       # Add cookie
       if cookies[link.short_link].nil?
-        cookies[link.short_link] = { value: true, expires: 1.day.from_now }
+        cookies[link.short_link] = {value: true, expires: 1.day.from_now}
 
         utc_now = Time.now.utc
         stats = Stat.where({:link_id => link.id, :user_id => link.user_id, :date => Date.parse(utc_now.to_s), :hour => utc_now.hour}).limit(1)

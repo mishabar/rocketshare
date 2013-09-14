@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130909121502) do
+ActiveRecord::Schema.define(:version => 20130914195327) do
+
+  create_table "leaderboard", :force => true do |t|
+    t.integer  "user_id",                   :null => false
+    t.string   "fb_id",                     :null => false
+    t.integer  "shares",     :default => 0, :null => false
+    t.integer  "views",      :default => 0, :null => false
+    t.integer  "miles",      :default => 0, :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "leaderboard", ["fb_id"], :name => "index_leaderboard_on_fb_id"
+  add_index "leaderboard", ["miles"], :name => "index_leaderboard_on_miles"
 
   create_table "shared_links", :force => true do |t|
     t.string   "fb_id",                          :null => false

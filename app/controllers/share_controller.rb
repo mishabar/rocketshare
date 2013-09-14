@@ -76,6 +76,18 @@ class ShareController < ApplicationController
             end
 
             @link.save
+
+            leaderboard = Leaderboard.find_or_initialize_by_fb_id(@link.fb_id)
+            if leaderboard.new_record?
+              leaderboard.user_id = @link.user_id
+              leaderboard.views = 0
+              leaderboard.shares = 1
+              leaderboard.miles = 5
+              leaderboard.save
+            else
+              leaderboard.increment!(:shares)
+              leaderboard.increment!(:miles, 5)
+            end
           end
         else
           @link = links[0]
@@ -107,9 +119,7 @@ class ShareController < ApplicationController
   end
 
   def leaderboard
-    @views_leaderboard = Stat.joins(:user).group('users.fb_id, users.name').select('users.fb_id, users.name, SUM(stats.views) as total_views').order('total_views desc').limit(100)
-    @shares_leaderboard = SharedLink.joins(:user).group('users.fb_id, users.name').select('users.fb_id, users.name, COUNT(users.fb_id) as total_shares').order('total_shares desc').limit(100)
-    render :json => {:leaderboard => {:views => @views_leaderboard, :shares => @shares_leaderboard}}
+    render :json => Leaderboard.for_user(params[:fb_id])
   end
 
   def stats
@@ -118,21 +128,10 @@ class ShareController < ApplicationController
 
     unless params[:friends].nil?
       in_values = (params[:friends].map! { |v| "'#{v}'" }).join(',')
-      sql = " SELECT v.fb_id, v.name, v.views, s.shares
-              FROM
-              (
-              SELECT fb_id, COUNT(*) as shares
-              FROM   shared_links
-              WHERE fb_id IN (#{in_values})
-              GROUP BY fb_id
-              ) s
-              LEFT JOIN
-              (
-              SELECT fb_id, name, SUM(stats.views) as views
-              FROM   users INNER JOIN stats ON users.id = stats.user_id
-              WHERE fb_id IN (#{in_values})
-              GROUP BY users.fb_id, users.name
-              ) v ON s.fb_id = v.fb_id"
+      sql = " SELECT l.fb_id as fb_id, u.name as name, views, shares
+              FROM leaderboard l
+              INNER JOIN users u ON u.id = l.user_id
+              WHERE l.fb_id IN (#{in_values})"
 
       ActiveRecord::Base.establish_connection()
       results = ActiveRecord::Base.connection().execute(sql)
@@ -140,9 +139,9 @@ class ShareController < ApplicationController
         friends.push({:fb_id => row['fb_id'], :name => row['name'], :views => row['views'], :shares => row['shares']})
       end
     end
-    @views = Stat.select('SUM(stats.views) as views').where({:user_id => @user.id})
-    @shares = SharedLink.select('COUNT(shared_links.user_id) as shares').where({:user_id => @user.id})
-    render :json => {:me => {:fb_id => @user.fb_id, :name => @user.name, :views => @views[0]['views'], :shares => @shares[0]['shares']},
+    my_score = Leaderboard.find_by_fb_id(params[:fb_id])
+    render :json => {:me => {:fb_id => my_score.fb_id, :name => @user.name,
+                             :views => my_score.views, :shares => my_score.shares},
                      :friends => friends}
   end
 
@@ -174,6 +173,17 @@ class ShareController < ApplicationController
             stat.increment!(:twitter)
           else
             stat.increment!(:other_sn)
+          end
+          leaderboard = Leaderboard.find_or_initialize_by_fb_id(link.fb_id)
+          if leaderboard.new_record?
+            leaderboard.user_id = link.user_id
+            leaderboard.views = 1
+            leaderboard.shares = 0
+            leaderboard.miles = 10
+            leaderboard.save
+          else
+            leaderboard.increment!(:views)
+            leaderboard.increment!(:miles, 10)
           end
 
           os = @_request.env['HTTP_USER_AGENT'].downcase

@@ -6,8 +6,10 @@ class Leaderboard < ActiveRecord::Base
   belongs_to :user
 
   def self.rebuild
-    sql = 'INSERT INTO leaderboard (user_id, fb_id, shares, views, miles, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
-           SELECT 	u.id as user_id, u.fb_id, coalesce(o1.shares, 0) as shares, coalesce(o2.views, 0) as views, (coalesce(o1.shares, 0) * 5 + coalesce(o2.views, 0) * 10) as miles
+    sql = 'INSERT INTO leaderboard (user_id, fb_id, shares, views, miles, created_at, updated_at)
+           SELECT 	u.id as user_id, u.fb_id, coalesce(o1.shares, 0) as shares, coalesce(o2.views, 0) as views,
+                    (coalesce(o1.shares, 0) * 5 + coalesce(o2.views, 0) * 10) as miles,
+                    CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
            FROM 	users u
            LEFT JOIN
              (SELECT 	user_id, fb_id, COUNT(1) as shares

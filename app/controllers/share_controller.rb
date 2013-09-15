@@ -76,18 +76,6 @@ class ShareController < ApplicationController
             end
 
             @link.save
-
-            leaderboard = Leaderboard.find_or_initialize_by_fb_id(@link.fb_id)
-            if leaderboard.new_record?
-              leaderboard.user_id = @link.user_id
-              leaderboard.views = 0
-              leaderboard.shares = 1
-              leaderboard.miles = 5
-              leaderboard.save
-            else
-              leaderboard.increment!(:shares)
-              leaderboard.increment!(:miles, 5)
-            end
           end
         else
           @link = links[0]
@@ -100,6 +88,34 @@ class ShareController < ApplicationController
     end
 
     render :json => data
+  end
+
+  def add_share
+    link = SharedLink.find_all_by_short_link(params[:link])
+    leaderboard = Leaderboard.find_or_initialize_by_fb_id(link.fb_id)
+    if leaderboard.new_record?
+      leaderboard.user_id = link.user_id
+      leaderboard.views = 0
+      leaderboard.shares = 1
+      leaderboard.miles = 5
+      leaderboard.save
+    else
+      leaderboard.increment!(:shares)
+      leaderboard.increment!(:miles, 5)
+    end
+  end
+
+  def add_bonus
+    leaderboard = Leaderboard.find_or_initialize_by_fb_id(params[:fb_id])
+    if leaderboard.new_record?
+      leaderboard.user_id = link.user_id
+      leaderboard.views = 0
+      leaderboard.shares = 0
+      leaderboard.miles = params[:miles].to_i
+      leaderboard.save
+    else
+      leaderboard.increment!(:miles, params[:miles].to_i)
+    end
   end
 
   def generate

@@ -26,10 +26,11 @@ class Leaderboard < ActiveRecord::Base
   end
 
   def self.for_user(fb_id)
-    top_users = Leaderboard.select('user_id, fb_id, shares, views, miles').order('miles desc, views desc, shares desc').limit(100)
+    top_users = Leaderboard.joins('users').select('users.user_id, users.fb_id, users.name, shares, views, miles').order('miles desc, views desc, shares desc').limit(100)
     my_score = Leaderboard.where({:fb_id => fb_id}).first
     my_place = Leaderboard.where('miles > ?', my_score.miles).select('(COUNT(1) + 1) as place').first
     return { :leaderboard => top_users, :me => {:user_id => my_score.user_id, :fb_id => my_score.fb_id,
+                                                :name => my_score.user.name,
                                                 :shares => my_score.shares, :views => my_score.views,
                                                 :miles => my_score.miles, :place => my_place['place']}}
   end

@@ -8,7 +8,7 @@
     <file path="/Dummy.txt" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1379188387587" ignored="false" />
     <file path="/20130823142148_create_shared_links.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377358253323" ignored="false" />
     <file path="/20130823143656_create_users.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377269130840" ignored="false" />
-    <file path="/share_controller.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1379334644269" ignored="false" />
+    <file path="/share_controller.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1379358186308" ignored="false" />
     <file path="/Gemfile" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377394562668" ignored="false" />
     <file path="/routes.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1379248112883" ignored="false" />
     <file path="/fragment.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1378993423406" ignored="false" />
@@ -50,7 +50,7 @@
       <file leaf-file-name="share_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/share_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="68" selection-start="3791" selection-end="3791" vertical-scroll-proportion="0.92877096">
+            <state line="164" column="107" selection-start="5441" selection-end="5441" vertical-scroll-proportion="0.85334647">
               <folding />
             </state>
           </provider>
@@ -77,7 +77,7 @@
       <file leaf-file-name="leaderboard.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/leaderboard.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="49" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.0">
+            <state line="27" column="11" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -144,8 +144,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="width" value="1936" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -173,7 +173,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -254,20 +253,21 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="FullScreen" value="false" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="options.searchVisible" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Rails.Development: rocketshare">
     <configuration default="false" name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
@@ -507,11 +507,11 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="1" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="2" class="java.lang.String" itemvalue="Rails.Production: rocketshare" />
-      <item index="3" class="java.lang.String" itemvalue="Rails.Development: rocketshare" />
-      <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate" />
+      <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="2" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="3" class="java.lang.String" itemvalue="Rails.Production: rocketshare" />
+      <item index="4" class="java.lang.String" itemvalue="Rails.Development: rocketshare" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -546,14 +546,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24920736" sideWeight="0.606469" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25289574" sideWeight="0.6078167" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21184632" sideWeight="0.6078167" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39218327" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -697,16 +697,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20130914195327_create_leaderboard.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="34" selection-start="476" selection-end="476" vertical-scroll-proportion="0.46723044">
-          <folding />
-        </state>
+        <state line="13" column="34" selection-start="476" selection-end="476" vertical-scroll-proportion="0.46723044" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20130823142148_create_shared_links.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="32" selection-start="97" selection-end="439" vertical-scroll-proportion="0.39534885">
-          <folding />
-        </state>
+        <state line="11" column="32" selection-start="97" selection-end="439" vertical-scroll-proportion="0.39534885" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/shared_link.rb">
@@ -726,13 +722,6 @@
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.9022346">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/leaderboard.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="49" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -758,9 +747,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/leaderboard.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="11" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/share_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="68" selection-start="3791" selection-end="3791" vertical-scroll-proportion="0.92877096">
+        <state line="164" column="107" selection-start="5441" selection-end="5441" vertical-scroll-proportion="0.85334647">
           <folding />
         </state>
       </provider>

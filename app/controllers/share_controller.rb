@@ -147,7 +147,7 @@ class ShareController < ApplicationController
 
     unless params[:friends].nil?
       in_values = (params[:friends].map! { |v| "'#{v}'" }).join(',')
-      sql = " SELECT l.fb_id as fb_id, u.name as name, views, shares
+      sql = " SELECT l.fb_id as fb_id, u.name as name, views, shares, miles
               FROM leaderboard l
               INNER JOIN users u ON u.id = l.user_id
               WHERE l.fb_id IN (#{in_values})"
@@ -155,12 +155,12 @@ class ShareController < ApplicationController
       ActiveRecord::Base.establish_connection()
       results = ActiveRecord::Base.connection().execute(sql)
       results.each do |row|
-        friends.push({:fb_id => row['fb_id'], :name => row['name'], :views => row['views'], :shares => row['shares']})
+        friends.push({:fb_id => row['fb_id'], :name => row['name'], :views => row['views'], :shares => row['shares'], :miles => row['miles']})
       end
     end
     my_score = Leaderboard.find_by_fb_id(params[:fb_id])
     render :json => {:me => {:fb_id => my_score.fb_id, :name => @user.name,
-                             :views => my_score.views, :shares => my_score.shares},
+                             :views => my_score.views, :shares => my_score.shares, :miles => my_score.miles},
                      :friends => friends}
   end
 

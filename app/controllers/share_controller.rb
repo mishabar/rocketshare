@@ -103,6 +103,7 @@ class ShareController < ApplicationController
       leaderboard.increment!(:shares)
       leaderboard.increment!(:miles, 5)
     end
+    render :json => { :status => 'ok', :miles => 5 }
   end
 
   def add_bonus
@@ -116,6 +117,8 @@ class ShareController < ApplicationController
     else
       leaderboard.increment!(:miles, params[:miles].to_i)
     end
+
+    render :json => { :status => 'ok', :miles => params[:miles].to_i }
   end
 
   def generate

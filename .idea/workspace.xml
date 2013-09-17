@@ -8,7 +8,7 @@
     <file path="/Dummy.txt" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1379188387587" ignored="false" />
     <file path="/20130823142148_create_shared_links.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377358253323" ignored="false" />
     <file path="/20130823143656_create_users.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377269130840" ignored="false" />
-    <file path="/share_controller.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1379358186308" ignored="false" />
+    <file path="/share_controller.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1379419704657" ignored="false" />
     <file path="/Gemfile" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377394562668" ignored="false" />
     <file path="/routes.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1379248112883" ignored="false" />
     <file path="/fragment.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1378993423406" ignored="false" />
@@ -50,52 +50,7 @@
       <file leaf-file-name="share_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/share_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="107" selection-start="5441" selection-end="5441" vertical-scroll-proportion="0.85334647">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dirty.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-3.2.11/lib/active_record/attribute_methods/dirty.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="627" selection-end="627" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="agent.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/mechanize-2.7.2/lib/mechanize/http/agent.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="270" column="0" selection-start="8404" selection-end="8404" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leaderboard.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/leaderboard.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="11" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="querying.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-3.2.11/lib/active_record/querying.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="4" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="43" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0">
+            <state line="93" column="55" selection-start="2905" selection-end="2949" vertical-scroll-proportion="0.09497207">
               <folding />
             </state>
           </provider>
@@ -144,8 +99,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1176" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -173,6 +128,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -253,8 +210,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -546,15 +501,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24920736" sideWeight="0.606469" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21184632" sideWeight="0.6078167" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39218327" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21685971" sideWeight="0.6084453" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3915547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32749325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -671,16 +626,12 @@
     </entry>
     <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-3.2.11/lib/active_record/dynamic_matchers.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="27" column="0" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-3.2.11/lib/active_record/connection_adapters/postgresql_adapter.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="650" column="0" selection-start="20883" selection-end="20883" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="650" column="0" selection-start="20883" selection-end="20883" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/youtube.html">
@@ -705,20 +656,6 @@
         <state line="11" column="32" selection-start="97" selection-end="439" vertical-scroll-proportion="0.39534885" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/shared_link.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-3.2.11/lib/active_record/querying.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="4" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.9022346">
@@ -726,37 +663,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/mechanize-2.7.2/lib/mechanize/http/agent.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/shared_link.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="270" column="0" selection-start="8404" selection-end="8404" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-3.2.11/lib/active_record/attribute_methods/dirty.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="627" selection-end="627" vertical-scroll-proportion="0.0">
+        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="43" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0">
+        <state line="5" column="43" selection-start="262" selection-end="262" vertical-scroll-proportion="0.118715085">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-3.2.11/lib/active_record/querying.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="4" selection-start="434" selection-end="434" vertical-scroll-proportion="0.023743017">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/leaderboard.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="11" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0">
+        <state line="27" column="11" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.6410614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/mechanize-2.7.2/lib/mechanize/http/agent.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="270" column="0" selection-start="8404" selection-end="8404" vertical-scroll-proportion="0.023743017">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Rails/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-3.2.11/lib/active_record/attribute_methods/dirty.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="627" selection-end="627" vertical-scroll-proportion="0.023743017">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/share_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="107" selection-start="5441" selection-end="5441" vertical-scroll-proportion="0.85334647">
+        <state line="93" column="55" selection-start="2905" selection-end="2949" vertical-scroll-proportion="0.09497207">
           <folding />
         </state>
       </provider>

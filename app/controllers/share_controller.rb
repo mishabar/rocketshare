@@ -91,7 +91,7 @@ class ShareController < ApplicationController
   end
 
   def add_share
-    link = SharedLink.find_all_by_short_link(params[:link])
+    link = SharedLink.find_by_short_link(params[:link])
     leaderboard = Leaderboard.find_or_initialize_by_fb_id(link.fb_id)
     if leaderboard.new_record?
       leaderboard.user_id = link.user_id

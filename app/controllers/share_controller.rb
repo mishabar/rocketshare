@@ -138,7 +138,11 @@ class ShareController < ApplicationController
   end
 
   def leaderboard
-    render :json => Leaderboard.for_user(params[:fb_id])
+    render :json => Leaderboard.for_user(params[:fb_id], false)
+  end
+
+  def my_place
+    render :json => Leaderboard.for_user(params[:fb_id], true)
   end
 
   def stats

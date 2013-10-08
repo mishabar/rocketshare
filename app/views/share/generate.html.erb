@@ -1,17 +1,31 @@
+<div class="center" id="container" style="display: none;">
+  <div class="bubble"><span>Thank you for watching!</span></div>
+  <div class="image"><img src="https://graph.facebook.com/<%= @link.user.fb_id %>/picture?type=normal"/></div>
+  <div class="name"><%= @link.user.name %></div>
+  <div class="separator"></div>
+  <div class="shared-using"><h3>I shared this using <strong>RocketShare</strong></h3><img src="/images/networks.png"/>
+
+    <h3>One Click sharing across all Social Networks</h3></div>
+  <div class="separator"></div>
+  <div class="install">
+    <a href="#">Try it now!</a>
+  </div>
+</div>
+
 <% if @web_flow == true %>
     <script type="text/javascript">
         (function () {
-            if (null != navigator.userAgent.toLowerCase().match(/(android|iphone|ipad|ipod)/)) {
+            if (null != navigator.userAgent.toLowerCase().match(/(android)/)) {
                 setTimeout(function () {
                     if (window.history.state == null || !window.history.state.rockt) {
                         window.history.replaceState({rockt: true}, 'rocket');
                         window.location.href = '<%= @link.original_link %>';
                     } else {
                         window.history.replaceState({rockt: false}, 'rocket');
-                        document.title = 'Rockt.li';
-                        document.write('<h1>Banner</h1>');
+                        document.title = 'RocketShare';
+                        container.style.display = 'block';
                     }
-                }, 200);
+                }, 300);
             } else {
                 window.location.href = '<%= @link.original_link %>';
             }

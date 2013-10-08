@@ -24,6 +24,8 @@
   <% unless @link.og_images.length == 0 %>
       <meta itemprop="image" content="<%= @link.og_images[0] %>">
   <% end %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  <link href='/css/share.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <%= yield %>

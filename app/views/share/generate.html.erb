@@ -14,7 +14,7 @@
 
 <% if @web_flow == true %>
     <script type="text/javascript">
-        (function () {
+        window.onload= function () {
             if (null != navigator.userAgent.toLowerCase().match(/(android)/)) {
                 setTimeout(function () {
                     if (window.history.state == null || !window.history.state.rockt) {
@@ -29,7 +29,7 @@
             } else {
                 window.location.href = '<%= @link.original_link %>';
             }
-        })();
+        };
     </script>
 <% else %>
     <% @link.images.each do |img| %>

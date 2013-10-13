@@ -7,4 +7,6 @@ Rocketshare::Application.routes.draw do
   match 'bonus/add/:fb_id/:miles' => 'share#add_bonus'
   match 'reports' => 'reports#default'
   match ':short_url' => 'share#generate'
+
+  root :controller => 'share', :action => 'redirect_to_google_play'
 end

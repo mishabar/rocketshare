@@ -168,6 +168,10 @@ class ShareController < ApplicationController
                      :friends => friends}
   end
 
+  def redirect_to_google_play
+    redirect_to 'https://play.google.com/store/apps/details?id=com.rocketshare'
+  end
+
   private
 
   def add_view(link)

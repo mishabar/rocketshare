@@ -103,7 +103,7 @@ class ShareController < ApplicationController
       leaderboard.increment!(:shares)
       leaderboard.increment!(:miles, 5)
     end
-    render :json => { :status => 'ok', :miles => 5 }
+    render :json => {:status => 'ok', :miles => 5}
   end
 
   def add_bonus
@@ -118,7 +118,7 @@ class ShareController < ApplicationController
       leaderboard.increment!(:miles, params[:miles].to_i)
     end
 
-    render :json => { :status => 'ok', :miles => params[:miles].to_i }
+    render :json => {:status => 'ok', :miles => params[:miles].to_i}
   end
 
   def generate
@@ -170,6 +170,18 @@ class ShareController < ApplicationController
 
   def redirect_to_google_play
     redirect_to 'https://play.google.com/store/apps/details?id=com.rocketshare'
+  end
+
+  def delete_user
+    user = User.find_by_fb_id(params[:fb_id])
+    unless user.nil?
+      SharedLink.destroy_all(:fb_id => params[:fb_id])
+      Leaderboard.destroy_all(:fb_id => params[:fb_id])
+      Stat.destroy_all(:user_id => user.id)
+      user.destroy
+    end
+
+    render :json => {:fb_id => params[:fb_id]}
   end
 
   private

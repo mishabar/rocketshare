@@ -115,7 +115,7 @@
       <file leaf-file-name="share.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/share.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.09672831">
+            <state line="0" column="55" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -702,11 +702,11 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate" />
-      <item index="1" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="2" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="3" class="java.lang.String" itemvalue="Rails.Production: rocketshare" />
-      <item index="4" class="java.lang.String" itemvalue="Rails.Development: rocketshare" />
+      <item index="0" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="2" class="java.lang.String" itemvalue="Rails.Production: rocketshare" />
+      <item index="3" class="java.lang.String" itemvalue="Rails.Development: rocketshare" />
+      <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -948,7 +948,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/share.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.09672831">
+        <state line="0" column="55" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

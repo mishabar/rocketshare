@@ -115,7 +115,7 @@
       <file leaf-file-name="share.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/share.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="42" selection-start="138" selection-end="138" vertical-scroll-proportion="0.048364155">
+            <state line="8" column="42" selection-start="623" selection-end="623" vertical-scroll-proportion="0.19345662">
               <folding />
             </state>
           </provider>
@@ -948,7 +948,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/share.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="42" selection-start="138" selection-end="138" vertical-scroll-proportion="0.048364155">
+        <state line="8" column="42" selection-start="623" selection-end="623" vertical-scroll-proportion="0.19345662">
           <folding />
         </state>
       </provider>

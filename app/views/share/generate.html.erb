@@ -15,27 +15,22 @@
 <% if @web_flow == true %>
     <script type="text/javascript">
         function resizeAndScroll() {
-            alert('resizing (1)');
             if (null != navigator.userAgent.toLowerCase().match(/android/i)) {
-                alert('resizing (1.2)');
-                try
-                {
-                window.scrollTo(0, 0); // reset in case prev not scrolled
-                var nPageH = $(document).height();
-                var nViewH = window.outerHeight;
-                alert('resizing (1.5) ' + nPageH + ' ' + nViewH);
-                if (nViewH > nPageH) {
-                    nViewH = nViewH / window.devicePixelRatio;
-                    $('BODY').css('height', nViewH + 'px');
+                try {
+                    window.scrollTo(0, 0); // reset in case prev not scrolled
+                    var nPageH = $(document).height();
+                    var nViewH = window.outerHeight;
+                    alert('resizing (1.5) ' + nPageH + ' ' + nViewH);
+                    if (nViewH > nPageH) {
+                        nViewH = nViewH / window.devicePixelRatio;
+                        document.body.style.height = nViewH + 'px';
+                    }
+                    window.scrollTo(0, 1);
                 }
-                alert($('BODY').height());
-                window.scrollTo(0, 1);
-                }
-                catch (ee){
+                catch (ee) {
                     alert(ee);
                 }
             }
-            alert('resizing (2)');
         }
 
         window.onload = function () {
@@ -48,7 +43,6 @@
                         window.history.replaceState({rockt: false}, 'rocket');
                         document.title = 'RocketShare';
                         container.style.display = 'block';
-                        alert('resizing');
                         resizeAndScroll();
                     }
                 }, 300);

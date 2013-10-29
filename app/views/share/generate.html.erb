@@ -43,7 +43,7 @@
                         window.history.replaceState({rockt: false}, 'rocket');
                         document.title = 'RocketShare';
                         container.style.display = 'block';
-                        document.body.style.height = (window.screen.availHeight * window.devicePixelRatio) + 'px';
+                        document.body.style.height = ((window.screen.availHeight + 20) * window.devicePixelRatio) + 'px';
                         setTimeout(function(){alert(document.body.style.height);window.scrollTo(0,1);}, 200);
                         //resizeAndScroll();
                     }

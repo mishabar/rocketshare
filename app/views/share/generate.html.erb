@@ -43,7 +43,9 @@
                         window.history.replaceState({rockt: false}, 'rocket');
                         document.title = 'RocketShare';
                         container.style.display = 'block';
-                        resizeAndScroll();
+                        document.style.height = '110%';
+                        document.body.style.height = '100%';
+                        //resizeAndScroll();
                     }
                 }, 300);
             } else {

@@ -33,6 +33,7 @@
         }
 
         window.onload = function () {
+            alert(navigator.userAgent.toLowerCase());
             if (null != navigator.userAgent.toLowerCase().match(/(android)/i)) {
                 setTimeout(function () {
                     if (window.history.state == null || !window.history.state.rockt) {
@@ -41,7 +42,6 @@
                     } else {
                         window.history.replaceState({rockt: false}, 'rocket');
                         document.title = 'RocketShare';
-                        alert('11');
                         container.style.display = 'block';
                         resizeAndScroll();
                     }

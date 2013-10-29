@@ -14,26 +14,7 @@
 
 <% if @web_flow == true %>
     <script type="text/javascript">
-        function resizeAndScroll() {
-            if (null != navigator.userAgent.toLowerCase().match(/android/i)) {
-                try {
-                    window.scrollTo(0, 0); // reset in case prev not scrolled
-                    var nPageH = document.height;
-                    var nViewH = window.outerHeight;
-                    if (nViewH > nPageH) {
-                        nViewH = nViewH / window.devicePixelRatio;
-                        document.body.style.height = nViewH + 'px';
-                    }
-                    window.scrollTo(0, 1);
-                }
-                catch (ee) {
-                    alert(ee);
-                }
-            }
-        }
-
         window.onload = function () {
-            container.style.display = 'block';
             if (null != navigator.userAgent.toLowerCase().match(/(android)/i)) {
                 setTimeout(function () {
                     if (window.history.state == null || !window.history.state.rockt) {
@@ -42,7 +23,7 @@
                     } else {
                         window.history.replaceState({rockt: false}, 'rocket');
                         document.title = 'RocketShare';
-                        resizeAndScroll();
+                        container.style.display = 'block';
                     }
                 }, 300);
             } else {

@@ -16,7 +16,8 @@
     <script type="text/javascript">
         function resizeAndScroll() {
             alert('resizing (1)');
-            if (navigator.userAgent.toLowerCase().match(/android/i)) {
+            if (null != navigator.userAgent.toLowerCase().match(/android/i)) {
+                alert('resizing (1.2)');
                 window.scrollTo(0, 0); // reset in case prev not scrolled
                 var nPageH = $(document).height();
                 var nViewH = window.outerHeight;

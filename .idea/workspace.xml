@@ -16,7 +16,7 @@
     <file path="/20130823161022_add_open_graph_fields_to_shared_links.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377274487515" ignored="false" />
     <file path="/shared_link.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377357948636" ignored="false" />
     <file path="/user.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377274567186" ignored="false" />
-    <file path="/generate.html.erb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1383067075226" ignored="false" />
+    <file path="/generate.html.erb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1383067232049" ignored="false" />
     <file path="/url_shortner.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377779334423" ignored="false" />
     <file path="/url_utils.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377779531259" ignored="false" />
     <file path="/20130829204748_create_stats.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377809660528" ignored="false" />
@@ -52,7 +52,7 @@
       <file leaf-file-name="generate.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/share/generate.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="42" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.31014493">
+            <state line="22" column="63" selection-start="1108" selection-end="1108" vertical-scroll-proportion="0.23623188">
               <folding />
             </state>
           </provider>
@@ -705,7 +705,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/share/generate.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="42" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.31014493">
+        <state line="22" column="63" selection-start="1108" selection-end="1108" vertical-scroll-proportion="0.23623188">
           <folding />
         </state>
       </provider>

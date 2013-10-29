@@ -18,9 +18,8 @@
             if (null != navigator.userAgent.toLowerCase().match(/android/i)) {
                 try {
                     window.scrollTo(0, 0); // reset in case prev not scrolled
-                    var nPageH = document.height;
+                    var nPageH = window.screen.availHeight;
                     var nViewH = window.outerHeight;
-                    alert('resizing (1.5) ' + nPageH + ' ' + nViewH);
                     if (nViewH > nPageH) {
                         nViewH = nViewH / window.devicePixelRatio;
                         document.body.style.height = nViewH + 'px';
@@ -43,10 +42,7 @@
                         window.history.replaceState({rockt: false}, 'rocket');
                         document.title = 'RocketShare';
                         container.style.display = 'block';
-                        document.body.style.height = '1800px';
-                                //((window.screen.availHeight + 100) * window.devicePixelRatio) + 'px';
-                        setTimeout(function(){alert(document.body.style.height);window.scrollTo(0,1);}, 200);
-                        //resizeAndScroll();
+                        resizeAndScroll();
                     }
                 }, 300);
             } else {

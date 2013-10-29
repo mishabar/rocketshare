@@ -52,7 +52,7 @@
       <file leaf-file-name="generate.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/share/generate.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="58" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.16231884">
+            <state line="20" column="48" selection-start="977" selection-end="992" vertical-scroll-proportion="0.16231884">
               <folding />
             </state>
           </provider>
@@ -738,7 +738,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/share/generate.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="58" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.16231884">
+        <state line="20" column="48" selection-start="977" selection-end="992" vertical-scroll-proportion="0.16231884">
           <folding />
         </state>
       </provider>

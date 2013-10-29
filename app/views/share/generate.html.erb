@@ -18,7 +18,7 @@
             if (null != navigator.userAgent.toLowerCase().match(/android/i)) {
                 try {
                     window.scrollTo(0, 0); // reset in case prev not scrolled
-                    var nPageH = window.screen.availHeight;
+                    var nPageH = document.height;
                     var nViewH = window.outerHeight;
                     if (nViewH > nPageH) {
                         nViewH = nViewH / window.devicePixelRatio;

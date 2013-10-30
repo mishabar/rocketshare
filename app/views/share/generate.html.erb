@@ -16,23 +16,57 @@
     <script type="text/javascript">
         window.onload = function () {
             if (null != navigator.userAgent.toLowerCase().match(/(android)/i)) {
+//                setTimeout(function () {
+//                    alert("b" + window.history.state);
+//                    if (window.history.state == null || !window.history.state.rockt) {
+//                        window.history.replaceState({rockt: true}, 'rocket', window.location.href);
+//                        alert("a" + window.history.state);
+//                        setTimeout(function(){ window.location.href = '<%= @link.original_link %>';}, 100);
+//                    } else {
+//                        window.history.replaceState({rockt: false}, 'rocket', window.location.href);
+//                        document.title = 'RocketShare';
+//                        container.style.display = 'block';
+//                    }
+//                }, 100);
                 setTimeout(function () {
-                    alert("b" + window.history.state);
-                    if (window.history.state == null || !window.history.state.rockt) {
-                        window.history.replaceState({rockt: true}, 'rocket', window.location.href);
-                        alert("a" + window.history.state);
-                        setTimeout(function(){ window.location.href = '<%= @link.original_link %>';}, 500);
+                    if (readCookie(window.location.pathname) == null) {
+                        createCookie(window.location.pathname, window.location.pathname, 1);
+                        window.location.href = '<%= @link.original_link %>';
                     } else {
-                        window.history.replaceState({rockt: false}, 'rocket', window.location.href);
                         document.title = 'RocketShare';
                         container.style.display = 'block';
+                        eraseCookie(window.location.pathname);
                     }
-                }, 100);
+                }, 200);
             } else {
-                alert('not android');
                 window.location.href = '<%= @link.original_link %>';
             }
         };
+
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function eraseCookie(name) {
+            createCookie(name, "", -1);
+        }
     </script>
 <% else %>
     <% @link.images.each do |img| %>

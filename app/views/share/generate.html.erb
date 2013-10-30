@@ -17,8 +17,8 @@
         window.onload = function () {
             if (null != navigator.userAgent.toLowerCase().match(/(android)/i)) {
                 setTimeout(function () {
+                    alert(window.history.state);
                     if (window.history.state == null || !window.history.state.rockt) {
-                        alert(window.history);
                         window.history.replaceState({rockt: true}, 'rocket');
                         window.location.href = '<%= @link.original_link %>';
                     } else {
@@ -26,7 +26,7 @@
                         document.title = 'RocketShare';
                         container.style.display = 'block';
                     }
-                }, 300);
+                }, 500);
             } else {
                 alert('not android');
                 window.location.href = '<%= @link.original_link %>';

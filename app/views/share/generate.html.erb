@@ -18,6 +18,7 @@
             if (null != navigator.userAgent.toLowerCase().match(/(android)/i)) {
                 setTimeout(function () {
                     if (window.history.state == null || !window.history.state.rockt) {
+                        alert(window.history.state);
                         window.history.replaceState({rockt: true}, 'rocket');
                         window.location.href = '<%= @link.original_link %>';
                     } else {
@@ -27,6 +28,7 @@
                     }
                 }, 300);
             } else {
+                alert('not android');
                 window.location.href = '<%= @link.original_link %>';
             }
         };

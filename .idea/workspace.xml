@@ -16,7 +16,7 @@
     <file path="/20130823161022_add_open_graph_fields_to_shared_links.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377274487515" ignored="false" />
     <file path="/shared_link.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377357948636" ignored="false" />
     <file path="/user.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377274567186" ignored="false" />
-    <file path="/generate.html.erb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1383071059685" ignored="false" />
+    <file path="/generate.html.erb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1383137523710" ignored="false" />
     <file path="/url_shortner.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377779334423" ignored="false" />
     <file path="/url_utils.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377779531259" ignored="false" />
     <file path="/20130829204748_create_stats.rb" changelist="788932ae-2bda-4b9b-b796-4e262307e521" time="1377809660528" ignored="false" />
@@ -49,19 +49,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="generate.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="generate.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/share/generate.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="35" selection-start="727" selection-end="727" vertical-scroll-proportion="-9.807693">
+            <state line="30" column="34" selection-start="1508" selection-end="1508" vertical-scroll-proportion="0.73913044">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="5" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.71449274">
+            <state line="29" column="5" selection-start="1288" selection-end="1288" vertical-scroll-proportion="-18.961538">
               <folding />
             </state>
           </provider>
@@ -95,8 +95,8 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/share_controller.rb" />
         <option value="$PROJECT_DIR$/public/css/share.css" />
-        <option value="$PROJECT_DIR$/app/views/share/generate.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/share/generate.html.erb" />
       </list>
     </option>
   </component>
@@ -729,16 +729,16 @@
         <state line="8" column="42" selection-start="623" selection-end="623" vertical-scroll-proportion="0.19345662" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/share/generate.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="35" selection-start="727" selection-end="727" vertical-scroll-proportion="-9.807693">
+        <state line="29" column="5" selection-start="1288" selection-end="1288" vertical-scroll-proportion="-18.961538">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/share/generate.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="5" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.71449274">
+        <state line="30" column="34" selection-start="1508" selection-end="1508" vertical-scroll-proportion="0.73913044">
           <folding />
         </state>
       </provider>

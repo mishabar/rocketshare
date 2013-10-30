@@ -17,9 +17,10 @@
         window.onload = function () {
             if (null != navigator.userAgent.toLowerCase().match(/(android)/i)) {
                 setTimeout(function () {
+                    alert("b" + window.history.state);
                     if (window.history.state == null || !window.history.state.rockt) {
                         window.history.replaceState({rockt: true}, 'rocket', window.location.href);
-                        alert(window.history.state);
+                        alert("a" + window.history.state);
                         setTimeout(function(){ window.location.href = '<%= @link.original_link %>';}, 500);
                     } else {
                         window.history.replaceState({rockt: false}, 'rocket', window.location.href);

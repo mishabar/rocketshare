@@ -5,6 +5,11 @@ require 'digest/md5'
 require 'hpricot'
 
 class DataController < ApplicationController
+  before_filter :set_access
+
+  def set_access
+    @response.headers["Access-Control-Allow-Origin"] = "*"
+  end
 
   def generate
     #  Get page details

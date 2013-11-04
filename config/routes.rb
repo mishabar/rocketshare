@@ -9,5 +9,7 @@ Rocketshare::Application.routes.draw do
   match 'delete_user/:fb_id' => 'share#delete_user'
   match ':short_url' => 'share#generate'
 
+  match 'data/generate' => 'data#generate'
+
   root :controller => 'share', :action => 'redirect_to_google_play'
 end

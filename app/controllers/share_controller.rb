@@ -19,6 +19,9 @@ class ShareController < ApplicationController
     data = {}
     begin
       #  Check required parameters
+      puts params[:fb_id]
+      puts params[:name]
+      puts params[:url]
       if params[:fb_id].blank?
         data[:error] = 'Invalid or missing fb_id'
       elsif params[:name].blank? && User.find_by_fb_id(params[:fb_id]).nil?
